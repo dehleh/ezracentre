@@ -759,6 +759,36 @@
     }
     alert(`Thank you. We will process your ${freq} partnership of ₦${Number(amount).toLocaleString()}. Payment gateway integration required.`);
   }
+
+  // Mobile nav
+  (function() {
+    var burger = document.querySelector('.nav-burger');
+    var navLinks = document.querySelector('.nav-links');
+    if (!burger || !navLinks) return;
+    var overlay = document.createElement('div');
+    overlay.className = 'nav-overlay';
+    var ul = document.createElement('ul');
+    ul.className = 'nav-overlay-links';
+    navLinks.querySelectorAll('a').forEach(function(a) {
+      var li = document.createElement('li');
+      li.appendChild(a.cloneNode(true));
+      ul.appendChild(li);
+    });
+    overlay.appendChild(ul);
+    document.body.appendChild(overlay);
+    burger.addEventListener('click', function() {
+      burger.classList.toggle('is-open');
+      overlay.classList.toggle('is-open');
+      document.body.style.overflow = overlay.classList.contains('is-open') ? 'hidden' : '';
+    });
+    overlay.querySelectorAll('a').forEach(function(a) {
+      a.addEventListener('click', function() {
+        burger.classList.remove('is-open');
+        overlay.classList.remove('is-open');
+        document.body.style.overflow = '';
+      });
+    });
+  })();
 </script>
 
 </body>

@@ -738,6 +738,7 @@
     .hero-visual { max-width: 400px; margin: 0 auto; }
     .hero-stats { left: 0; bottom: -20px; }
     .hero-scroll { display: none; }
+    .hero-visual-tag { right: 0; top: 10px; }
     .verse-banner { padding: 4rem 1.5rem; }
     .mission, .pillars, .founder, .partnership, .latest, .newsletter { padding: 5rem 1.5rem; }
     .mission-grid { grid-template-columns: 1fr; gap: 2rem; }
@@ -1029,6 +1030,36 @@
       nav.style.boxShadow = 'none';
     }
   });
+
+  // Mobile nav
+  (function() {
+    var burger = document.querySelector('.nav-burger');
+    var navLinks = document.querySelector('.nav-links');
+    if (!burger || !navLinks) return;
+    var overlay = document.createElement('div');
+    overlay.className = 'nav-overlay';
+    var ul = document.createElement('ul');
+    ul.className = 'nav-overlay-links';
+    navLinks.querySelectorAll('a').forEach(function(a) {
+      var li = document.createElement('li');
+      li.appendChild(a.cloneNode(true));
+      ul.appendChild(li);
+    });
+    overlay.appendChild(ul);
+    document.body.appendChild(overlay);
+    burger.addEventListener('click', function() {
+      burger.classList.toggle('is-open');
+      overlay.classList.toggle('is-open');
+      document.body.style.overflow = overlay.classList.contains('is-open') ? 'hidden' : '';
+    });
+    overlay.querySelectorAll('a').forEach(function(a) {
+      a.addEventListener('click', function() {
+        burger.classList.remove('is-open');
+        overlay.classList.remove('is-open');
+        document.body.style.overflow = '';
+      });
+    });
+  })();
 </script>
 
 </body>

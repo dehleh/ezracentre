@@ -639,11 +639,71 @@ h1, h2, h3, h4 {
   font-family: var(--font-body);
 }
 
+/* ============ MOBILE NAV OVERLAY ============ */
+.nav-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 99;
+  background: rgba(245, 239, 228, 0.97);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s var(--ease-soft);
+}
+
+.nav-overlay.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.nav-overlay-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.75rem;
+}
+
+.nav-overlay-links a {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 500;
+  color: var(--purple-deep);
+  text-decoration: none;
+  letter-spacing: -0.01em;
+  transition: color 0.3s;
+}
+
+.nav-overlay-links a:hover {
+  color: var(--gold-deep);
+}
+
+.nav-overlay-links .nav-cta {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+/* Burger animation when open */
+.nav-burger.is-open span:nth-child(1) {
+  transform: translateY(6.5px) rotate(45deg);
+}
+.nav-burger.is-open span:nth-child(2) {
+  opacity: 0;
+}
+.nav-burger.is-open span:nth-child(3) {
+  transform: translateY(-6.5px) rotate(-45deg);
+}
+
 /* ============ RESPONSIVE ============ */
 @media (max-width: 900px) {
   .nav { padding: 1rem 1.5rem; }
   .nav-links { display: none; }
-  .nav-burger { display: flex; }
+  .nav-burger { display: flex; z-index: 101; }
   .container, .container-narrow { padding: 0 1.5rem; }
   .page-hero { padding: 8rem 1.5rem 3rem; }
   .footer { padding: 4rem 1.5rem 2rem; }
@@ -657,4 +717,7 @@ h1, h2, h3, h4 {
     text-align: center;
   }
   .btn { padding: 0.85rem 1.5rem; font-size: 0.8rem; }
+  .scripture { font-size: clamp(1.25rem, 4vw, 2rem); }
+  .scripture::before { font-size: 4rem; top: -0.75rem; left: -0.25rem; }
+  .lede { font-size: 1.1rem; }
 }
