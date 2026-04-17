@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Programs & Events — The Ezra Centre</title>
+<meta name="description" content="Retreats, teaching intensives, and leadership cohorts where disciples are equipped to walk the incarnational path — patiently, together.">
+
+<!-- Open Graph / Social sharing -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://theezracentre.org/programs.html">
+<meta property="og:title" content="Programs & Events — The Ezra Centre">
+<meta property="og:description" content="Retreats, teaching intensives, and leadership cohorts where disciples are equipped to walk the incarnational path — patiently, together.">
+<meta property="og:image" content="https://theezracentre.org/images/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="The Ezra Centre">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="https://theezracentre.org/programs.html">
+<meta name="twitter:title" content="Programs & Events — The Ezra Centre">
+<meta name="twitter:description" content="Retreats, teaching intensives, and leadership cohorts where disciples are equipped to walk the incarnational path — patiently, together.">
+<meta name="twitter:image" content="https://theezracentre.org/images/og-image.jpg">
+
+<meta name="theme-color" content="#3D0F5C">
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" type="image/png" href="images/logo-color.png">
+<style>
+  .programs-intro {
+    padding: 5rem 3rem;
+    background: var(--cream);
+  }
+
+  .programs-intro-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .programs-intro p {
+    font-family: var(--font-editorial);
+    font-style: italic;
+    font-size: 1.25rem;
+    color: var(--ink-soft);
+    line-height: 1.6;
+  }
+
+  /* FEATURED */
+  .featured {
+    padding: 3rem 3rem 6rem;
+    background: var(--cream);
+  }
+
+  .featured-card {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: var(--ivory);
+    border: 1px solid var(--gold);
+    overflow: hidden;
+    position: relative;
+  }
+
+  .featured-tag {
+    position: absolute;
+    top: 1.5rem;
+    left: 1.5rem;
+    background: var(--gold);
+    color: var(--ink);
+    padding: 0.4rem 1rem;
+    font-family: var(--font-body);
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-weight: 600;
+    z-index: 2;
+  }
+
+  .featured-visual {
+    aspect-ratio: 1/1;
+    background: linear-gradient(135deg, var(--purple-deep), var(--purple-rich));
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .featured-visual::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 70% 30%, var(--gold-veil) 0%, transparent 60%);
+  }
+
+  .featured-date-large {
+    font-family: var(--font-display);
+    color: var(--cream);
+    text-align: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  .featured-date-large .day {
+    font-size: 7rem;
+    font-weight: 400;
+    line-height: 1;
+    color: var(--gold-bright);
+  }
+
+  .featured-date-large .month {
+    font-family: var(--font-editorial);
+    font-style: italic;
+    font-size: 1.5rem;
+    letter-spacing: 0.1em;
+    color: var(--cream);
+    margin-top: 0.5rem;
+  }
+
+  .featured-date-large .year {
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: rgba(245, 239, 228, 0.6);
+    margin-top: 1rem;
+  }
+
+  .featured-body {
+    padding: 3.5rem 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .featured-body .eyebrow { margin-bottom: 1rem; }
+
+  .featured-body h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--purple-deep);
+  }
+
+  .featured-body h2 em { font-family: var(--font-editorial); font-style: italic; color: var(--gold-deep); }
+
+  .featured-body .lede { margin-bottom: 2rem; }
+
+  .featured-meta {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    padding: 1.5rem 0;
+    margin-bottom: 2rem;
+    border-top: 1px solid var(--purple-mist);
+    border-bottom: 1px solid var(--purple-mist);
+  }
+
+  .featured-meta-item .label {
+    font-family: var(--font-body);
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold-deep);
+    margin-bottom: 0.25rem;
+  }
+
+  .featured-meta-item .value {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    color: var(--purple-deep);
+    font-weight: 500;
+  }
+
+  /* EVENTS LIST */
+  .events {
+    padding: 6rem 3rem;
+    background: var(--cream-warm);
+  }
+
+  .events-header {
+    max-width: 1300px;
+    margin: 0 auto 4rem;
+  }
+
+  .events-header h2 { margin: 1rem 0; }
+
+  .events-list {
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+
+  .event {
+    display: grid;
+    grid-template-columns: 160px 1fr 200px;
+    gap: 3rem;
+    padding: 2.5rem 0;
+    border-bottom: 1px solid var(--purple-mist);
+    align-items: center;
+    transition: all 0.3s;
+  }
+
+  .event:hover {
+    padding-left: 1rem;
+  }
+
+  .event-date-block {
+    background: var(--ivory);
+    border: 1px solid var(--gold);
+    padding: 1.5rem 1rem;
+    text-align: center;
+    border-radius: 2px;
+  }
+
+  .event-date-block .day {
+    font-family: var(--font-display);
+    font-size: 3rem;
+    font-weight: 400;
+    line-height: 1;
+    color: var(--purple-deep);
+  }
+
+  .event-date-block .month {
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold-deep);
+    margin-top: 0.5rem;
+    font-weight: 500;
+  }
+
+  .event-body .event-type {
+    font-family: var(--font-body);
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold-deep);
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+  }
+
+  .event-body h3 {
+    font-size: 1.5rem;
+    color: var(--purple-deep);
+    margin-bottom: 0.5rem;
+  }
+
+  .event-body p {
+    color: var(--ink-soft);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    max-width: 550px;
+  }
+
+  .event-meta {
+    font-family: var(--font-editorial);
+    font-style: italic;
+    font-size: 0.9rem;
+    color: var(--ink-muted);
+    margin-top: 0.75rem;
+  }
+
+  .event-action {
+    text-align: right;
+  }
+
+  /* CATEGORIES */
+  .categories {
+    padding: 6rem 3rem;
+    background: var(--cream);
+  }
+
+  .categories-header {
+    max-width: 900px;
+    margin: 0 auto 4rem;
+    text-align: center;
+  }
+
+  .categories-header h2 { margin: 1rem 0; }
+
+  .categories-grid {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  .category {
+    padding: 3rem 2.5rem;
+    background: var(--ivory);
+    border: 1px solid var(--purple-mist);
+    transition: all 0.4s var(--ease-soft);
+    position: relative;
+  }
+
+  .category:hover {
+    border-color: var(--gold);
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(61, 15, 92, 0.1);
+  }
+
+  .category-number {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--gold-deep);
+    margin-bottom: 1rem;
+  }
+
+  .category h3 {
+    font-size: 1.6rem;
+    color: var(--purple-deep);
+    margin-bottom: 1rem;
+  }
+
+  .category p {
+    color: var(--ink-soft);
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  @media (max-width: 900px) {
+    .programs-intro { padding: 3rem 1.5rem; }
+    .featured { padding: 2rem 1.5rem 4rem; }
+    .featured-card { grid-template-columns: 1fr; }
+    .featured-visual { aspect-ratio: 16/10; }
+    .featured-date-large .day { font-size: 5rem; }
+    .featured-body { padding: 2.5rem 1.5rem; }
+    .featured-meta { grid-template-columns: 1fr; gap: 0.75rem; }
+    .events { padding: 4rem 1.5rem; }
+    .event { grid-template-columns: 1fr; gap: 1rem; }
+    .event-date-block { width: 140px; }
+    .event-action { text-align: left; }
+    .categories { padding: 4rem 1.5rem; }
+    .categories-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">
+      <img src="images/logo-color.png" alt="The Ezra Centre" class="nav-brand-mark">
+      <div class="nav-brand-text">The Ezra Centre<em>transforming man from the core</em></div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="programs.html" class="active">Programs</a></li>
+      <li><a href="books.html">Books</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="donate.html" class="nav-cta">Partner With Us</a></li>
+    </ul>
+    <button class="nav-burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <div class="eyebrow reveal">Programs & Events</div>
+    <h1 class="reveal reveal-delay-1">Gatherings for the <em style="font-family: var(--font-editorial); font-style: italic; font-weight:300; color: var(--gold-deep);">formation</em> of the saints.</h1>
+    <p class="lede reveal reveal-delay-2">Retreats, teaching intensives, and ongoing fellowships where disciples are equipped to walk the incarnational path — patiently, together.</p>
+  </div>
+</section>
+
+<section class="programs-intro">
+  <div class="programs-intro-inner scroll-reveal">
+    <div class="ornament"><div class="ornament-dot"></div></div>
+    <p>"And let us consider how we may spur one another on toward love and good deeds."</p>
+    <div class="scripture-ref" style="margin-top: 1.5rem;">Hebrews 10:24</div>
+  </div>
+</section>
+
+<!-- FEATURED -->
+<section class="featured">
+  <div class="featured-card scroll-reveal">
+    <div class="featured-tag">Featured Event</div>
+    <div class="featured-visual">
+      <div class="featured-date-large">
+        <div class="day">18</div>
+        <div class="month">June</div>
+        <div class="year">2026</div>
+      </div>
+    </div>
+    <div class="featured-body">
+      <div class="eyebrow">Annual Retreat</div>
+      <h2>The <em>Ezra</em> Retreat 2026</h2>
+      <p class="lede">Three days set apart — away from the noise, toward the Word, and into the kind of honest fellowship that forms saints from the core.</p>
+      <div class="featured-meta">
+        <div class="featured-meta-item">
+          <div class="label">When</div>
+          <div class="value">18 – 20 June</div>
+        </div>
+        <div class="featured-meta-item">
+          <div class="label">Where</div>
+          <div class="value">Lagos, Nigeria</div>
+        </div>
+        <div class="featured-meta-item">
+          <div class="label">Capacity</div>
+          <div class="value">Limited to 80</div>
+        </div>
+      </div>
+      <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+        <a href="contact.html" class="btn btn-primary">Register Interest <span class="btn-arrow">→</span></a>
+        <a href="#" class="btn btn-secondary">View Programme</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EVENTS LIST -->
+<section class="events">
+  <div class="events-header scroll-reveal">
+    <div class="eyebrow">Upcoming</div>
+    <h2 class="h-section">What's <em style="font-family: var(--font-editorial); font-style: italic; color: var(--gold-deep);">next</em>.</h2>
+  </div>
+  <div class="events-list">
+
+    <div class="event scroll-reveal">
+      <div class="event-date-block">
+        <div class="day">05</div>
+        <div class="month">May</div>
+      </div>
+      <div class="event-body">
+        <div class="event-type">Teaching Intensive</div>
+        <h3>Being Before Doing</h3>
+        <p>A one-day intensive exploring the theological and practical priority of formation over performance in Christian ministry.</p>
+        <div class="event-meta">9am – 4pm · Lagos · Open to all</div>
+      </div>
+      <div class="event-action">
+        <a href="contact.html" class="btn btn-secondary">Register →</a>
+      </div>
+    </div>
+
+    <div class="event scroll-reveal">
+      <div class="event-date-block">
+        <div class="day">22</div>
+        <div class="month">May</div>
+      </div>
+      <div class="event-body">
+        <div class="event-type">Leadership Cohort</div>
+        <h3>The Pastor's Core — Cohort III</h3>
+        <p>A six-month fellowship for pastors committed to being formed before forming others. Limited cohort of twelve.</p>
+        <div class="event-meta">Begins 22 May · Monthly gatherings · By application</div>
+      </div>
+      <div class="event-action">
+        <a href="contact.html" class="btn btn-secondary">Apply →</a>
+      </div>
+    </div>
+
+    <div class="event scroll-reveal">
+      <div class="event-date-block">
+        <div class="day">18</div>
+        <div class="month">Jun</div>
+      </div>
+      <div class="event-body">
+        <div class="event-type">Annual Retreat</div>
+        <h3>The Ezra Retreat 2026</h3>
+        <p>Our annual flagship gathering. Three days of teaching, worship, and fellowship set apart for the deep work of formation.</p>
+        <div class="event-meta">18 – 20 June · Residential · By registration</div>
+      </div>
+      <div class="event-action">
+        <a href="contact.html" class="btn btn-secondary">Register →</a>
+      </div>
+    </div>
+
+    <div class="event scroll-reveal">
+      <div class="event-date-block">
+        <div class="day">14</div>
+        <div class="month">Jul</div>
+      </div>
+      <div class="event-body">
+        <div class="event-type">Online Seminar</div>
+        <h3>The Order of Ezra 7:10</h3>
+        <p>A live online seminar walking through the implications of the divine order — prepare, seek, do, teach — for our discipleship today.</p>
+        <div class="event-meta">6pm WAT · Online · Free with registration</div>
+      </div>
+      <div class="event-action">
+        <a href="contact.html" class="btn btn-secondary">Register →</a>
+      </div>
+    </div>
+
+    <div class="event scroll-reveal">
+      <div class="event-date-block">
+        <div class="day">09</div>
+        <div class="month">Sep</div>
+      </div>
+      <div class="event-body">
+        <div class="event-type">Women's Gathering</div>
+        <h3>Sisters Set Apart</h3>
+        <p>A gathering for women disciples — teaching, prayer, and shared testimony on living the incarnational gospel in home and community.</p>
+        <div class="event-meta">9 – 10 September · Lagos · Open to all women</div>
+      </div>
+      <div class="event-action">
+        <a href="contact.html" class="btn btn-secondary">Register →</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CATEGORIES -->
+<section class="categories">
+  <div class="categories-header scroll-reveal">
+    <div class="eyebrow">How We Gather</div>
+    <h2 class="h-section">Three kinds of <em style="font-family: var(--font-editorial); font-style: italic; color: var(--gold-deep);">formation</em>.</h2>
+    <p class="lede">Each program is designed to serve a distinct season of the disciple's journey — the first exposure, the deeper walk, the lifelong cohort.</p>
+  </div>
+  <div class="categories-grid">
+    <div class="category scroll-reveal">
+      <div class="category-number">i.</div>
+      <h3>Teaching Intensives</h3>
+      <p>Single-day or weekend gatherings open to all. The doorway into our ministry — concentrated teaching on the foundational themes of formation.</p>
+    </div>
+    <div class="category scroll-reveal">
+      <div class="category-number">ii.</div>
+      <h3>Annual Retreats</h3>
+      <p>Residential gatherings set apart from ordinary life. Three to five days of worship, teaching, rest, and honest fellowship — typically by registration.</p>
+    </div>
+    <div class="category scroll-reveal">
+      <div class="category-number">iii.</div>
+      <h3>Leadership Cohorts</h3>
+      <p>Extended fellowships for pastors and emerging leaders. Small groups meeting monthly over six to twelve months — by application only.</p>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <h3>The Ezra Centre</h3>
+      <p>Transforming man from the core</p>
+      <p class="footer-verse">"For Ezra had prepared and set his heart to seek the Law of the Lord, and to do and teach in Israel its statutes and its ordinances." — Ezra 7:10</p>
+    </div>
+    <div class="footer-col">
+      <h4>Explore</h4>
+      <ul>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="programs.html">Programs & Events</a></li>
+        <li><a href="books.html">Books</a></li>
+        <li><a href="blog.html">Blog</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Engage</h4>
+      <ul>
+        <li><a href="donate.html">Partner With Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="index.html#newsletter">Newsletter</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Connect</h4>
+      <ul>
+        <li><a href="mailto:hello@theezracentre.org">hello@theezracentre.org</a></li>
+        <li><a href="#">theezracentre.org</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div>© 2026 The Ezra Centre. All rights reserved.</div>
+    <div class="footer-social">
+      <a href="#" aria-label="Facebook">f</a>
+      <a href="#" aria-label="Instagram">◎</a>
+      <a href="#" aria-label="YouTube">▶</a>
+      <a href="#" aria-label="Twitter">𝕏</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('is-visible'); });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+  document.querySelectorAll('.scroll-reveal').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
