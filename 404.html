@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Page Not Found — The Ezra Centre</title>
+<link rel="stylesheet" href="/styles.css">
+<link rel="icon" type="image/png" href="/images/logo-color.png">
+<style>
+  body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .not-found {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8rem 3rem 5rem;
+    background: var(--cream);
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+  }
+
+  .not-found::before {
+    content: '';
+    position: absolute;
+    top: -100px;
+    right: -100px;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, var(--gold-veil) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .not-found::after {
+    content: '';
+    position: absolute;
+    bottom: -200px;
+    left: -200px;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, var(--purple-veil) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .not-found-inner {
+    max-width: 640px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .not-found-number {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: clamp(8rem, 20vw, 14rem);
+    line-height: 1;
+    color: var(--purple-deep);
+    font-weight: 400;
+    letter-spacing: -0.05em;
+    margin-bottom: 1rem;
+    position: relative;
+  }
+
+  .not-found-number em {
+    font-family: var(--font-editorial);
+    color: var(--gold-deep);
+  }
+
+  .not-found h1 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: 1.5rem;
+    color: var(--purple-shadow);
+  }
+
+  .not-found h1 em {
+    font-family: var(--font-editorial);
+    font-style: italic;
+    color: var(--gold-deep);
+  }
+
+  .not-found p {
+    font-family: var(--font-editorial);
+    font-style: italic;
+    font-size: 1.25rem;
+    color: var(--ink-soft);
+    line-height: 1.6;
+    margin-bottom: 2rem;
+  }
+
+  .not-found-verse {
+    font-family: var(--font-editorial);
+    font-style: italic;
+    color: var(--gold-deep);
+    font-size: 0.95rem;
+    padding: 1.5rem 0;
+    margin-bottom: 2rem;
+    border-top: 1px solid var(--gold);
+    border-bottom: 1px solid var(--gold);
+  }
+
+  .not-found-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+</style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">
+      <img src="/images/logo-color.png" alt="The Ezra Centre" class="nav-brand-mark">
+      <div class="nav-brand-text">
+        The Ezra Centre
+        <em>transforming man from the core</em>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/programs.html">Programs</a></li>
+      <li><a href="/books.html">Books</a></li>
+      <li><a href="/blog.html">Blog</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+      <li><a href="/donate.html" class="nav-cta">Partner With Us</a></li>
+    </ul>
+    <button class="nav-burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<main class="not-found">
+  <div class="not-found-inner">
+    <div class="not-found-number">4<em>0</em>4</div>
+    <h1>This page is <em>not</em> where it should be.</h1>
+    <p>The page you were looking for has either moved, been renamed, or perhaps was never here at all. Like all things, it is passing — but the work of formation continues.</p>
+    <div class="not-found-verse">
+      "Ask and it will be given to you; seek and you will find; knock and the door will be opened to you."<br>
+      <span style="font-family: var(--font-body); font-style: normal; font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold-deep); font-weight: 500; margin-top: 0.75rem; display: inline-block;">— Matthew 7:7</span>
+    </div>
+    <div class="not-found-buttons">
+      <a href="/" class="btn btn-primary">Return Home <span class="btn-arrow">→</span></a>
+      <a href="/contact.html" class="btn btn-secondary">Contact Us</a>
+    </div>
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <h3>The Ezra Centre</h3>
+      <p>Transforming man from the core</p>
+      <p class="footer-verse">"For Ezra had prepared and set his heart to seek the Law of the Lord, and to do and teach in Israel its statutes and its ordinances." — Ezra 7:10</p>
+    </div>
+    <div class="footer-col">
+      <h4>Explore</h4>
+      <ul>
+        <li><a href="/about.html">About Us</a></li>
+        <li><a href="/programs.html">Programs & Events</a></li>
+        <li><a href="/books.html">Books</a></li>
+        <li><a href="/blog.html">Blog</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Engage</h4>
+      <ul>
+        <li><a href="/donate.html">Partner With Us</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+        <li><a href="/#newsletter">Newsletter</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Connect</h4>
+      <ul>
+        <li><a href="mailto:hello@theezracentre.org">hello@theezracentre.org</a></li>
+        <li><a href="#">theezracentre.org</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div>© 2026 The Ezra Centre. All rights reserved.</div>
+    <div class="footer-social">
+      <a href="#" aria-label="Facebook">f</a>
+      <a href="#" aria-label="Instagram">◎</a>
+      <a href="#" aria-label="YouTube">▶</a>
+      <a href="#" aria-label="Twitter">𝕏</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
